@@ -11,7 +11,7 @@ var timeSlots = ["Time-7AM","Time-8AM","Time-9AM","Time-10AM","Time-11AM","Time-
 // Timer to show the current time updated each second. 
 function showTime() {
   dtToday = moment();
-  currentDay.textContent = dtToday.format("dddd" +", " + "MMMM" + " " + "Do" + " " + "YYYY" + " " + "H:mm:ss A")
+  currentDay.textContent = dtToday.format("dddd" +", " + "MMMM" + " " + "Do" + " " + "YYYY" + " " + "h:mm:ss A")
 };
 
 setInterval(showTime, 1000);
@@ -19,12 +19,15 @@ setInterval(showTime, 1000);
 // Timer function for coloring the background of the timeslots. 
 function updateBackgrounds() {
 
-  currentHour = "Time-" + dtToday.format("H" +"A");
+  currentHour = "Time-" + dtToday.format("h" +"A");
 
   var hourIndex = timeSlots.findIndex(checkHour);
 
   for(i=0; i <timeSlots.length; ++i){
     let textHour = document.querySelector("#" + timeSlots[i]);
+    console.log(currentHour);
+    console.log(hourIndex);
+    console.log(i);
  
     // The current timeslot matches the current hour. 
     if(timeSlots[i]==currentHour) {
