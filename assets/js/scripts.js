@@ -123,9 +123,4 @@ document.querySelectorAll(".saveBtn").forEach(item => {
   item.addEventListener("click", saveAppt);
 });
 
-// TODO: Complete the function to toggle the hourly textarea's for the background colors. 
-function updateHours() {
-
-};
-
 getAppts();
